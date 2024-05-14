@@ -4,36 +4,38 @@ let num3 = document.querySelector("#num3");
 let btn = document.querySelector("#btn");
 let resultado = document.querySelector("#resultado");
 let mediaNormal;
-let mediaPonderada
+let mediaPonderada;
+
 function calcularMedia()
 {
-    let numMedia1 = num1.value;
-    let numMedia2 = num2.value;
-    let numMedia3 = num3.value;
+    let numMedia1 = parseInt(num1.value);
+    let numMedia2 = parseInt(num2.value);
+    let numMedia3 = parseInt(num3.value);
     
-    mediaNormal = (numMedia1 + numMedia2 + numMedia3)/3;
+    let mediasomada = (numMedia1 + numMedia2 + numMedia3);
+    mediaNormal = mediasomada/3;
 
     resultado.innerHTML += "<p>" + mediaNormal + "</p>" + "<br>";
 }
 function calcularMediaponderada()
 {
-    let numMediaP1 = num1.value * 3;
-    let numMediaP2 = num2.value * 2;
-    let numMediaP3 = num3.value * 5;
+    let numMediaP1 = parseInt(num1.value) * 3;
+    let numMediaP2 = parseInt(num2.value) * 2;
+    let numMediaP3 = parseInt(num3.value) * 5;
 
-    let numMediaPp1 = num1.value;
-    let numMediaPp2 = num2.value;
-    let numMediaPp3 = num3.value;
+    let numMediaPp1 = parseInt(num1.value);
+    let numMediaPp2 = parseInt(num2.value);
+    let numMediaPp3 = parseInt(num3.value);
 
     let pesoMedia = numMediaP1 + numMediaP2 + numMediaP3;
     let divideMedia = numMediaPp1 + numMediaPp2 + numMediaPp3;
-    mediaPonderada = pesoMedia/divideMedia; 
+    mediaPonderada = parseFloat(pesoMedia/divideMedia); 
 
     resultado.innerHTML += "<p>" + mediaPonderada + "</p>" + "<br>";
 }
 function somaMedia()
 {
-    let mediaSoma = mediaNormal + mediaPonderada;
+    let mediaSoma = parseFloat(mediaNormal + mediaPonderada);
 
     resultado.innerHTML += "<p>" + mediaSoma + "</p>" + "<br>";
 }
